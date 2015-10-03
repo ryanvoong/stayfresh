@@ -2,10 +2,21 @@ extends layout
 
 block content
     .search-bar
-    .col-md-offset-1
+
         each item in user.pantry
-            .col-md-3.items
-                p Expiration: #{item.expiration}
-                    a.fa.fa-trash
+         - var exp= item.expiration
+         - var curr= Date.now();
+
+
+
+            .col-md-3.btn.btn-default.items
+                p Expires: #{item.expiration.getMonth()}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
                 img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
                 h2 #{item.name}
+                  h3
+                     i.fa.fa-trash.fa-align-right
+                     i.fa.fa-cart-plus.fa-align-right
+
+                     .exp
+                        if(curr > exp)
+                           |Expired
