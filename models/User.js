@@ -23,7 +23,12 @@ var userSchema = new mongoose.Schema({
   },
 
   resetPasswordToken: String,
-  resetPasswordExpires: Date
+  resetPasswordExpires: Date,
+
+  pantry: [{
+    name: String,
+    expiration: Date
+  }]
 });
 
 /**

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+   form(name="add-item", method="post")
+      input(type="hidden", name="_csrf", value=_csrf)
+      .form-group
+         label Name
+         input.form-control(type="text", name="name")
+      .form-group
+         label Expiration Date
+         input.form-control(type="date", name="expiration")
+      button.btn.btn-defaut(type="submit") Submit
