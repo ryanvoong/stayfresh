@@ -12366,3 +12366,11 @@ footer p, footer ul {
 .fa {
   margin-right: 6px;
 }
+
+.overlay {
+  background-image: url("/images/foodie.jpg");
+  background: no-repeat center;
+  background-size: cover;
+  width: 100%;
+  text-align: center;
+}
