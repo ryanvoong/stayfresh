@@ -117,6 +117,8 @@ app.post('/account/password', passportConf.isAuthenticated, userController.postU
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 app.get('/pantry', passportConf.isAuthenticated, pantryController.getPantry);
+app.get('/add_item', passportConf.isAuthenticated, pantryController.getAddItem);
+app.post('/add_item', passportConf.isAuthenticated, pantryController.postAddItem);
 
 /**
  * API examples routes.
