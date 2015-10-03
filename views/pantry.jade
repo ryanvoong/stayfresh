@@ -1,15 +1,55 @@
 extends layout
 
 block content
-    .search-bar
+    p Add item
+    form(name="add-item", method="post")
+        input(type="hidden", name="_csrf", value=_csrf)
+        .form-group
+            label Name
+            input.form-control(type="text", name="name")
+        .form-group
+            label Expiration Date
+            input.form-control(type="date", name="expiration")
+        button.btn.btn-defaut(type="submit") Submit
 
-        each item in user.pantry
-         - var exp= item.expiration
-         - var curr= Date.now();
 
+    - var expired = [];
+    - var almost_expired = [];
+    - var fresh = [];
+    - var curr = new Date();
+    each item in pantry.items
+        if item.expiration && item.expiration < curr
+            - expired.push(item);
+        else if item.expiration && new Date(item.expiration.getDate + 3) < curr
+            - almost_expired.push(item);
+        else
+            - fresh.push(item);
 
-
-            .col-md-3.btn.btn-default.items
-                p Expires: #{item.expiration.getMonth()}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
+    .col-md-offset-1
+        each item in expired
+            .col-md-3.items
+                p Expiration: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
                 img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
                 h2 #{item.name}
+                p Expired
+                p
+                    i.fa.fa-trash.fa-align-right
+                    i.fa.fa-cart-plus.fa-align-right
+        each item in almost_expired
+            .col-md-3.items
+                p Expiration: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
+                img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
+                h2 #{item.name}
+                p Almost expired
+                p
+                    i.fa.fa-trash.fa-align-right
+                    i.fa.fa-cart-plus.fa-align-right
+        each item in fresh
+            .col-md-3.items
+                p Expiration: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
+                img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
+                h2 #{item.name}
+                p Fresh
+                p
+                    i.fa.fa-trash.fa-align-right
+                    i.fa.fa-cart-plus.fa-align-right

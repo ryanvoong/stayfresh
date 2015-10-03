@@ -25,11 +25,8 @@ var userSchema = new mongoose.Schema({
   resetPasswordToken: String,
   resetPasswordExpires: Date,
 
-  pantry: [{
-    name: String,
-    expiration: Date,
-    acquisition: Date
-  }]
+  shoppingList: { type: String, default: '' },
+  pantry: { type: String, default: '' }
 });
 
 /**
