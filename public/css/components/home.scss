@@ -1,18 +1,21 @@
 .overlay {
-  background-size: cover;
   width: 100%;
   text-align: center;
-  height: 63em;
+  height: 60em;
   background-position: center;
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
+  display: inline-block;
 }
 
 #start {
+  margin-top: 5em;
   background-image: url(/images/foodie.jpg);
+  background-size: 100%;
 }
 
 #list {
   background: no-repeat center url(/images/cart.jpg);
+  background-size: 100%;
 }
 
 h1 {
@@ -23,6 +26,11 @@ h1 {
   -o-transition: opacity 3s ease-in;
   transition: opacity 3s ease-in;
   animation: fadein 3s;
+}
+
+h2 {
+  font-size: 5em;
+  color: #556B2F;
 }
 
 p {
