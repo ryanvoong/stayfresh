@@ -27,7 +27,8 @@ var userSchema = new mongoose.Schema({
 
   pantry: [{
     name: String,
-    expiration: Date
+    expiration: Date,
+    acquisition: Date
   }]
 });
 
