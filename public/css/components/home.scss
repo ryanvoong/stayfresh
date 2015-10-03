@@ -1,9 +1,18 @@
 .overlay {
-  background: no-repeat center url(/images/foodie.jpg);
   background-size: cover;
   width: 100%;
   text-align: center;
   height: 63em;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+#start {
+  background-image: url(/images/foodie.jpg);
+}
+
+#list {
+  background: no-repeat center url(/images/cart.jpg);
 }
 
 h1 {
