@@ -2,6 +2,20 @@
   padding: 1rem;
 }
 
+table {
+  padding: 2em;
+  align-content: center;
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  padding: 1em .5em;
+}
+
 .items{
   margin: 2rem 3rem;
   padding: 1rem 2rem;
@@ -16,16 +30,19 @@
     font-size: 1.8rem;
   }
 }
+
 i{
 
   float:right;
   margin-right:0;
   margin-left: 1rem;
 }
+
 .btn-default{
   float: right;
   padding: 1rem 0;
 }
+
 $item-color: rgba(255, 9, 15, 0.73);
 
 
