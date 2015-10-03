@@ -2,8 +2,7 @@
   width: 100%;
   text-align: center;
   height: 60em;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: no-repeat center;
   display: inline-block;
 }
 
@@ -15,6 +14,11 @@
 
 #list {
   background: no-repeat center url(/images/cart.jpg);
+  background-size: 100%;
+}
+
+#description {
+  background-image: url(/images/apple.jpg);
   background-size: 100%;
 }
 
@@ -40,6 +44,15 @@ p {
   -o-transition: opacity 5s ease-in;
   transition: opacity 5s ease-in;
   animation: fadein 5s;
+}
+
+#description p {
+  text-align: right;
+  margin-left: 20em;
+}
+
+#description h2 {
+  text-align: right;
 }
 
 @-webkit-keyframes fadein {
