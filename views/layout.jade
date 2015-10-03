@@ -7,8 +7,6 @@ html
     meta(name='csrf-token', content=_csrf)
     title #{title}
     link(rel='stylesheet', href='/css/main.css')
-    each file in css
-      link(rel='stylesheet', href='/css/#{file}')
   body
     include partials/header
 
