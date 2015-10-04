@@ -41,7 +41,8 @@ block content
                 p Expiration: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
                 img.img-responsive(src="#{item.url}")
                 h2 #{item.name}
-                p Expired
+                .exp
+                    p Expired
                 a.fa.fa-trash.fa-2x
                 a.fa.fa-cart-plus.fa-2x
         each item in almost_expired
@@ -49,7 +50,8 @@ block content
                 p Expiration: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
                 img.img-responsive(src="#{item.url}")
                 h2 #{item.name}
-                p Almost expired
+                .almost-exp
+                    p Almost expired
                 a.fa.fa-trash.fa-2x
                 a.fa.fa-cart-plus.fa-2x
         each item in fresh
