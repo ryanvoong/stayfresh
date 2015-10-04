@@ -9,7 +9,7 @@ block content
                 a.dropdown-toggle.indiv-drop(href='#', data-toggle='dropdown')
                     h3 Add Item
                         i.caret
-                ul.dropdown-menu
+                ul.dropdown-menu.drop-wide
                     .add-item
                         form(action="/list_add_item", method="post")
                             input(type="hidden", name="_csrf", value=_csrf)
@@ -18,12 +18,12 @@ block content
                                 input.form-control(type="text", name="name")
                             button.btn.btn-defaut(type="submit") Submit
     if shoppingList && shoppingList.items
-        .col-md-offset-1
+        .col-md-offset-1.container#item
             each item in shoppingList.items
                 .col-md-3.items
-                form(action="/remove_from_list", method="post")
-                    input(type="hidden", name="_csrf", value=_csrf)
-                    input(type="hidden", name="name", value="#{item.name}")
-                    button.fa.fa-trash.fa-2x(type="submit")
-                img.img-responsive(src="#{item.url}")
-                h2 #{item.name}
+                    form(action="/remove_from_list", method="post")
+                        input(type="hidden", name="_csrf", value=_csrf)
+                        input(type="hidden", name="name", value="#{item.name}")
+                        button.fa.fa-trash.fa-2x(type="submit")
+                    img.img-responsive(src="#{item.url}")
+                    h2 #{item.name}

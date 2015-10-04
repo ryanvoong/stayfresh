@@ -9,7 +9,7 @@ block content
                 a.dropdown-toggle.indiv-drop(href='#', data-toggle='dropdown')
                     h3 Add Item
                      i.caret
-                ul.dropdown-menu
+                ul.dropdown-menu.drop-wide
                   .add-item
                     form(action="/add_item", method="post")
                         input(type="hidden", name="_csrf", value=_csrf)
@@ -35,55 +35,58 @@ block content
             else
                 - fresh.push(item);
 
-        .col-md-offset-1.container#item
+        .container#item
             each item in expired
                 .col-md-3.items
                     p Expires: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
-                    img.img-responsive(src="#{item.url}")
+                    img.img-responsive.thumbnail#thumb-pantry(src="#{item.url}")
                     h2 #{item.name}
-                    .exp
-                        p Expired
-                    .btn-group
-                        form(action="/remove_from_pantry", method="post")
-                            input(type="hidden", name="_csrf", value=_csrf)
-                            input(type="hidden", name="name", value="#{item.name}")
-                            input(type="hidden", name="expiration", value="#{item.expiration}")
-                            button.fa.fa-trash.fa-1x(type="submit")
-                        form(action="/add_to_cart", method="post")
-                            input(type="hidden", name="_csrf", value=_csrf)
-                            button.fa.fa-cart-plus.fa-1x(type="submit")
+                    .last-row
+                        .state#exp
+                            p Expired
+                        .btn-group
+                            form(action="/remove_from_pantry", method="post")
+                                input(type="hidden", name="_csrf", value=_csrf)
+                                input(type="hidden", name="name", value="#{item.name}")
+                                input(type="hidden", name="expiration", value="#{item.expiration}")
+                                button.fa.fa-trash.fa-1x(type="submit")
+                            form(action="/add_to_cart", method="post")
+                                input(type="hidden", name="_csrf", value=_csrf)
+                                button.fa.fa-cart-plus.fa-1x(type="submit")
             each item in almost_expired
                 .col-md-3.items
                     p Expires: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
                     img.img-responsive(src="#{item.url}")
                     p Expires: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
-                    img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
+                    img.img-responsive.thumbnail#thumb-pantry(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
                     h2 #{item.name}
-                    .almost-exp
-                        p Almost expired
-                    .btn-group
-                        form(action="/remove_from_pantry", method="post")
-                            input(type="hidden", name="_csrf", value=_csrf)
-                            input(type="hidden", name="name", value="#{item.name}")
-                            input(type="hidden", name="expiration", value="#{item.expiration}")
-                            button.fa.fa-trash.fa-1x(type="submit")
-                        form(action="/add_to_cart", method="post")
-                            input(type="hidden", name="_csrf", value=_csrf)
-                            button.fa.fa-cart-plus.fa-1x(type="submit")
+                    .last-row
+                        .state#almost-exp
+                            p Almost expired
+                        .btn-group
+                            form(action="/remove_from_pantry", method="post")
+                                input(type="hidden", name="_csrf", value=_csrf)
+                                input(type="hidden", name="name", value="#{item.name}")
+                                input(type="hidden", name="expiration", value="#{item.expiration}")
+                                button.fa.fa-trash.fa-1x(type="submit")
+                            form(action="/add_to_cart", method="post")
+                                input(type="hidden", name="_csrf", value=_csrf)
+                                button.fa.fa-cart-plus.fa-1x(type="submit")
             each item in fresh
                 .col-md-3.items
                     p Expires: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
-                    img.img-responsive(src="#{item.url}")
+                    img.img-responsive.thumbnail#thumb-pantry(src="#{item.url}")
                     h2 #{item.name}
-                    .fresh
-                       p Fresh
-                    .btn-group
-                        form(action="/remove_from_pantry", method="post")
-                            input(type="hidden", name="_csrf", value=_csrf)
-                            input(type="hidden", name="name", value="#{item.name}")
-                            input(type="hidden", name="expiration", value="#{item.expiration}")
-                            button.fa.fa-trash.fa-1x(type="submit")
-                        form(action="/add_to_cart", method="post")
-                            input(type="hidden", name="_csrf", value=_csrf)
-                            button.fa.fa-cart-plus.fa-1x(type="submit")
+                    .last-row
+                        .state#fresh
+                           p Fresh
+                        .btn-group
+                            form(action="/remove_from_pantry", method="post")
+                                input(type="hidden", name="_csrf", value=_csrf)
+                                input(type="hidden", name="name", value="#{item.name}")
+                                input(type="hidden", name="expiration", value="#{item.expiration}")
+                                button.fa.fa-trash.fa-1x(type="submit")
+                            form(action="/add_to_cart", method="post")
+                                input(type="hidden", name="_csrf", value=_csrf)
+                                button.fa.fa-cart-plus.fa-1x(type="submit")
 
