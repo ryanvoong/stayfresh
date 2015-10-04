@@ -1,0 +1,7 @@
+#list {
+  background: no-repeat center url(/images/shopping.jpg);
+}
+
+h1 {
+  text-align: left;
+}
