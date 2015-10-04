@@ -1,7 +1,7 @@
-#list {
+#shopping {
   background: no-repeat center url(/images/shopping.jpg);
 }
 
-h1 {
+#list h1 {
   text-align: left;
 }
