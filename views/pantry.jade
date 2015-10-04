@@ -22,7 +22,6 @@ block content
 
 
 
-
     - var expired = [];
     - var almost_expired = [];
     - var fresh = [];
@@ -40,8 +39,9 @@ block content
             .col-md-3.items
                 p Expiration: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
                 img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
-                h2 #{item.name}
-                p Expired
+                h2  #{item.name}
+                .exp
+                    p Expired
                 a.fa.fa-trash.fa-2x
                 a.fa.fa-cart-plus.fa-2x
         each item in almost_expired
@@ -49,7 +49,8 @@ block content
                 p Expiration: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
                 img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
                 h2 #{item.name}
-                p Almost expired
+                .almost-exp
+                    p Almost expired
                 a.fa.fa-trash.fa-2x
                 a.fa.fa-cart-plus.fa-2x
         each item in fresh
