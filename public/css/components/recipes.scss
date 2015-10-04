@@ -5,11 +5,20 @@
 #search {
   width: 100%;
   height: auto;
-  //background: no-repeat center;
   display: inline-block;
   text-align: center;
 }
 
 #bar {
-  width: 20em;
+  width: 40em;
+}
+
+#submit {
+  float: left;
+  margin-left: 3em;
+}
+
+#find {
+  float: right;
+  margin-right: 2em;
 }
