@@ -1,3 +1,7 @@
-.overlay {
-    background-image: url(/images/shopping.jpg);
+h1 {
+    text-align: left;
+}
+
+.mini_overlay {
+    background: no-repeat center url(/images/shopping.jpg);
 }

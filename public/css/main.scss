@@ -14,6 +14,24 @@ html {
   min-height: 100%;
 }
 
+.mini_overlay {
+  width: 100%;
+  text-align: center;
+  height: 20em;
+  display: inline-block;
+  background-size: 100%;
+}
+
+.mini-overlay h1 {
+  font-size: 9em;
+  transform-style: preserve-3d;
+  -webkit-transition: opacity 3s ease-in;
+  -moz-transition: opacity 3s ease-in;
+  -o-transition: opacity 3s ease-in;
+  transition: opacity 3s ease-in;
+  animation: fadein 3s;
+}
+
 body {
   padding-top: 60px;
   margin-bottom: 75px;
@@ -66,3 +84,4 @@ footer {
 
 @import "components/home";
 @import "components/pantry";
+@import "components/shoppingList";
