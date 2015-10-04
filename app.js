@@ -30,6 +30,7 @@ var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var pantryController = require('./controllers/pantry');
 var shoppingListController = require('./controllers/shoppingList');
+var recipeController = require('./controllers/recipe');
 
 /**
  * API keys and Passport configuration.
@@ -118,6 +119,8 @@ app.get('/pantry', passportConf.isAuthenticated, pantryController.getPantry);
 app.post('/pantry', passportConf.isAuthenticated, pantryController.postAddItem);
 app.get('/shopping_list', passportConf.isAuthenticated, shoppingListController.getShoppingList);
 app.post('/shopping_list', passportConf.isAuthenticated, shoppingListController.postAddItem);
+app.get('/recipes', passportConf.isAuthenticated, recipeController.getRecipes);
+app.post('/recipes-query', passportConf.isAuthenticated, recipeController.postRecipesQuery);
 
 /**
  * API examples routes.
