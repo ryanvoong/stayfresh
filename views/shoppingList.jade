@@ -21,9 +21,14 @@ block content
         .col-md-offset-1.container#item
             each item in shoppingList.items
                 .col-md-3.items
-                    form(action="/remove_from_list", method="post")
-                        input(type="hidden", name="_csrf", value=_csrf)
-                        input(type="hidden", name="name", value="#{item.name}")
-                        button.fa.fa-trash.fa-2x(type="submit")
-                    img.img-responsive(src="#{item.url}")
-                    h2 #{item.name}
+                    .top-row
+                        img.img-responsive.thumbnail#thumb-list(src="#{item.url}")
+                    .last-row
+                        .col-md-9
+                            h2 #{item.name}
+
+                        .col-md-3
+                            form(action="/remove_from_list", method="post")
+                                input(type="hidden", name="_csrf", value=_csrf)
+                                input(type="hidden", name="name", value="#{item.name}")
+                                button.fa.fa-trash.fa-2x(type="submit")
