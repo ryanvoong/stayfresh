@@ -69,11 +69,13 @@ exports.postAddItem = function(req, res) {
 exports.postRemoveFromPantry = function(req, res) {
     Pantry.findById({ _id: req.user.pantry}, function(err, pantry) {
         if (pantry) {
-            pantry.items.forEach(function(item, index) {
+            pantry.items.some(function(item, index) {
                 if (item.name == req.body.name && item.expiration == req.body.expiration) {
-                    pantry.items.splice(index);
+                    pantry.items.splice(index, 1);
                     pantry.save();
-
+                    return true;
+                } else {
+                    return false;
                 }
             });
         }
