@@ -1,0 +1,3 @@
+.overlay {
+    background-image: url(/images/shopping.jpg);
+}
