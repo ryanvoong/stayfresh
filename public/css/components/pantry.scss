@@ -26,10 +26,7 @@ td {
     text-align: center;
     font-size: 3rem;
   }
-  h2:hover{
-    color: white;
-    background-color: red;
-  }
+
   p{
     float: left;
     font-weight: bold;
@@ -66,12 +63,13 @@ a:hover{
 .indiv-bar{
   margin-right: 2rem;
 }
-$item-color: rgba(146, 9, 14, 0.73);
 
 
 .exp{
-  padding: 0 1rem;
   font-size: 2rem;
   float:left;
-  color: $item-color;
+  color: rgba(146, 9, 14, 0.73);
+}
+.almost-exp{
+  color: #948823;
 }

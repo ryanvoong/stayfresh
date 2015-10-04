@@ -13,10 +13,26 @@ block content
             br
             input.form-control(type="date", placeholder="Expiration Date")
         button.btn.btn-defaut(type="submit") Submit
+    h1 Shopping List
+    .nav.info-bar
+        ul.nav.navbar-nav.navbar-default.indiv-bar
+            li.dropdown(class=title == 'Add-Item' ? 'active' : undefined)
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    h3 Add Item
+                        i.caret
+                ul.dropdown-menu
+                    .add-item
+                        form(name="add-item", method="post")
+                            input(type="hidden", name="_csrf", value=_csrf)
+                            .form-group
+                                label Name
+                                input.form-control(type="text", name="name")
+                            button.btn.btn-defaut(type="submit") Submit
 
-    //.col-md-offset-1
-    //    each item in shoppingList.items
-    //        .col-md-3.items
-    //            a.fa.fa-trash
-    //            img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
-    //            h2 #{item.name}
+
+    .col-md-offset-1
+        each item in shoppingList.items
+            .col-md-3.items
+                a.fa.fa-trash.fa-2x
+                img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
+                h2 #{item.name}

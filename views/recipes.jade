@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    form(action="/recipes-query", method="post")
+        input(type="hidden", name="_csrf", value=_csrf)
+        .form-group
+            label Search for a recipe
+            input.form-control(type="text", name="query")
+        button.btn.btn-defaut(type="submit") Submit
+
+        if recipes
+            each recipe in recipes
+                if recipe.thumbnail
+                    .col-md-3
+                        p #{recipe.title}
+                        img.img-responsive(src="#{recipe.thumbnail}")
