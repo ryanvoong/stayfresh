@@ -121,6 +121,7 @@ app.get('/shopping_list', passportConf.isAuthenticated, shoppingListController.g
 app.post('/list_add_item', passportConf.isAuthenticated, shoppingListController.postAddItem);
 app.get('/recipes', passportConf.isAuthenticated, recipeController.getRecipes);
 app.post('/recipes-query', passportConf.isAuthenticated, recipeController.postRecipesQuery);
+app.post('/recipes-ingredients', passportConf.isAuthenticated, recipeController.postRecipesIngredients);
 app.post('/add_to_cart', passportConf.isAuthenticated, shoppingListController.postAddItem);
 app.post('/remove_from_pantry', passportConf.isAuthenticated, pantryController.postRemoveFromPantry);
 app.post('/remove_from_list', passportConf.isAuthenticated, shoppingListController.postRemoveFromList);

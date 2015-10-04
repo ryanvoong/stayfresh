@@ -22,68 +22,68 @@ block content
                         button.btn.btn-defaut(type="submit") Submit
 
 
+    if pantry && pantry.items
+        - var expired = [];
+        - var almost_expired = [];
+        - var fresh = [];
+        - var curr = new Date();
+        each item in pantry.items
+            if item.expiration && item.expiration < curr
+                - expired.push(item);
+            else if item.expiration && new Date(item.expiration.getDate + 3) < curr
+                - almost_expired.push(item);
+            else
+                - fresh.push(item);
 
-    - var expired = [];
-    - var almost_expired = [];
-    - var fresh = [];
-    - var curr = new Date();
-    each item in pantry.items
-        if item.expiration && item.expiration < curr
-            - expired.push(item);
-        else if item.expiration && new Date(item.expiration.getDate + 3) < curr
-            - almost_expired.push(item);
-        else
-            - fresh.push(item);
-
-    .col-md-offset-1.container#item
-        each item in expired
-            .col-md-3.items
-                p Expires: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
-                img.img-responsive(src="#{item.url}")
-                h2 #{item.name}
-                .exp
-                    p Expired
-                .btn-group
-                    form(action="/remove_from_pantry", method="post")
-                        input(type="hidden", name="_csrf", value=_csrf)
-                        input(type="hidden", name="name", value="#{item.name}")
-                        input(type="hidden", name="expiration", value="#{item.expiration}")
-                        button.fa.fa-trash.fa-1x(type="submit")
-                    form(action="/add_to_cart", method="post")
-                        input(type="hidden", name="_csrf", value=_csrf)
-                        button.fa.fa-cart-plus.fa-1x(type="submit")
-        each item in almost_expired
-            .col-md-3.items
-                p Expires: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
-                img.img-responsive(src="#{item.url}")
-                p Expires: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
-                img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
-                h2 #{item.name}
-                .almost-exp
-                    p Almost expired
-                .btn-group
-                    form(action="/remove_from_pantry", method="post")
-                        input(type="hidden", name="_csrf", value=_csrf)
-                        input(type="hidden", name="name", value="#{item.name}")
-                        input(type="hidden", name="expiration", value="#{item.expiration}")
-                        button.fa.fa-trash.fa-1x(type="submit")
-                    form(action="/add_to_cart", method="post")
-                        input(type="hidden", name="_csrf", value=_csrf)
-                        button.fa.fa-cart-plus.fa-1x(type="submit")
-        each item in fresh
-            .col-md-3.items
-                p Expires: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
-                img.img-responsive(src="#{item.url}")
-                h2 #{item.name}
-                .fresh
-                   p Fresh
-                .btn-group
-                    form(action="/remove_from_pantry", method="post")
-                        input(type="hidden", name="_csrf", value=_csrf)
-                        input(type="hidden", name="name", value="#{item.name}")
-                        input(type="hidden", name="expiration", value="#{item.expiration}")
-                        button.fa.fa-trash.fa-1x(type="submit")
-                    form(action="/add_to_cart", method="post")
-                        input(type="hidden", name="_csrf", value=_csrf)
-                        button.fa.fa-cart-plus.fa-1x(type="submit")
+        .col-md-offset-1.container#item
+            each item in expired
+                .col-md-3.items
+                    p Expires: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
+                    img.img-responsive(src="#{item.url}")
+                    h2 #{item.name}
+                    .exp
+                        p Expired
+                    .btn-group
+                        form(action="/remove_from_pantry", method="post")
+                            input(type="hidden", name="_csrf", value=_csrf)
+                            input(type="hidden", name="name", value="#{item.name}")
+                            input(type="hidden", name="expiration", value="#{item.expiration}")
+                            button.fa.fa-trash.fa-1x(type="submit")
+                        form(action="/add_to_cart", method="post")
+                            input(type="hidden", name="_csrf", value=_csrf)
+                            button.fa.fa-cart-plus.fa-1x(type="submit")
+            each item in almost_expired
+                .col-md-3.items
+                    p Expires: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
+                    img.img-responsive(src="#{item.url}")
+                    p Expires: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
+                    img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
+                    h2 #{item.name}
+                    .almost-exp
+                        p Almost expired
+                    .btn-group
+                        form(action="/remove_from_pantry", method="post")
+                            input(type="hidden", name="_csrf", value=_csrf)
+                            input(type="hidden", name="name", value="#{item.name}")
+                            input(type="hidden", name="expiration", value="#{item.expiration}")
+                            button.fa.fa-trash.fa-1x(type="submit")
+                        form(action="/add_to_cart", method="post")
+                            input(type="hidden", name="_csrf", value=_csrf)
+                            button.fa.fa-cart-plus.fa-1x(type="submit")
+            each item in fresh
+                .col-md-3.items
+                    p Expires: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
+                    img.img-responsive(src="#{item.url}")
+                    h2 #{item.name}
+                    .fresh
+                       p Fresh
+                    .btn-group
+                        form(action="/remove_from_pantry", method="post")
+                            input(type="hidden", name="_csrf", value=_csrf)
+                            input(type="hidden", name="name", value="#{item.name}")
+                            input(type="hidden", name="expiration", value="#{item.expiration}")
+                            button.fa.fa-trash.fa-1x(type="submit")
+                        form(action="/add_to_cart", method="post")
+                            input(type="hidden", name="_csrf", value=_csrf)
+                            button.fa.fa-cart-plus.fa-1x(type="submit")
 
