@@ -17,12 +17,13 @@ block content
                                 label Name
                                 input.form-control(type="text", name="name")
                             button.btn.btn-defaut(type="submit") Submit
-    .col-md-offset-1
-        each item in shoppingList.items
-            .col-md-3.items
-            form(action="/remove_from_list", method="post")
-                input(type="hidden", name="_csrf", value=_csrf)
-                input(type="hidden", name="name", value="#{item.name}")
-                button.fa.fa-trash.fa-2x(type="submit")
-            img.img-responsive(src="#{item.url}")
-            h2 #{item.name}
+    if shoppingList && shoppingList.items
+        .col-md-offset-1
+            each item in shoppingList.items
+                .col-md-3.items
+                form(action="/remove_from_list", method="post")
+                    input(type="hidden", name="_csrf", value=_csrf)
+                    input(type="hidden", name="name", value="#{item.name}")
+                    button.fa.fa-trash.fa-2x(type="submit")
+                img.img-responsive(src="#{item.url}")
+                h2 #{item.name}
