@@ -1,20 +1,23 @@
 .overlay {
   width: 100%;
-  text-align: center;
+  float: none;
   height: 60em;
   background: no-repeat center;
   display: inline-block;
+
 }
 
 #start {
   margin-top: 5em;
   background-image: url(/images/foodie.jpg);
   background-size: 100%;
+  text-align: center;
 }
 
 #list {
   background: no-repeat center url(/images/cart.jpg);
   background-size: 100%;
+  text-align: center;
 }
 
 #description {
