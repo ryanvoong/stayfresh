@@ -3,17 +3,6 @@ extends layout
 block content
     .container.mini_overlay
         h1 Shopping List
-    br
-    br
-    p Add item
-    form(name="add-item", method="post")
-        input(type="hidden", name="csrf", value=_csrf)
-        .form-group
-            input.form-control(type="text", placeholder="Name of Food", name="name")
-            br
-            input.form-control(type="date", placeholder="Expiration Date")
-        button.btn.btn-defaut(type="submit") Submit
-    h1 Shopping List
     .nav.info-bar
         ul.nav.navbar-nav.navbar-default.indiv-bar
             li.dropdown(class=title == 'Add-Item' ? 'active' : undefined)
@@ -25,8 +14,7 @@ block content
                         form(name="add-item", method="post")
                             input(type="hidden", name="_csrf", value=_csrf)
                             .form-group
-                                label Name
-                                input.form-control(type="text", name="name")
+                                input.form-control(type="text", placeholder="Name")
                             button.btn.btn-defaut(type="submit") Submit
 
 
