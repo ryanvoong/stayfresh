@@ -148,10 +148,7 @@ exports.getScraping = function(req, res, next) {
     $('.title a[href^="http"], a[href^="https"]').each(function() {
       links.push($(this));
     });
-    res.render('api/scraping', {
-      title: 'Web Scraping',
-      links: links
-    });
+    res.redirect('/');
   });
 };
 
