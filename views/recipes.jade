@@ -1,16 +1,25 @@
 extends layout
 
 block content
-    form(action="/recipes-query", method="post")
-        input(type="hidden", name="_csrf", value=_csrf)
-        .form-group
-            label Search for a recipe
-            input.form-control(type="text", name="query")
-        button.btn.btn-defaut(type="submit") Submit
+    .container.mini_overlay#lay-for-recipe
+        h1 My Recipes
+    .container
+        .col-md-offset-3
+            .col-md-8.info-bar#recipe
+                    form(action="/recipes-query", method="post")
+                        input(type="hidden", name="_csrf", value=_csrf)
+                        .form-group#recipe-specific
 
+                            input.form-control(type="text", placeholder="Search a recipe",name="query")
+                        button.btn.btn-defaut(type="submit") Submit
+
+    .container
         if recipes
             each recipe in recipes
                 if recipe.thumbnail
-                    .col-md-3
-                        p #{recipe.title}
-                        img.img-responsive(src="#{recipe.thumbnail}")
+                    .indiv-recipe
+                        .recipe-text
+                         p #{recipe.title}
+
+                        img.img-responsive.recipe-img(src="#{recipe.thumbnail}")
+                    hr

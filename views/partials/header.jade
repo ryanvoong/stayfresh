@@ -10,13 +10,14 @@
         i.fa.fa-thumb-tack
         | Stay Fresh
     .collapse.navbar-collapse
-      ul.nav.navbar-nav
-        li(class=title=='Home'?'active':undefined)
-          a(href='/') Home
-        li(class=title == 'My Foods' ? 'active':undefined)
-          a(href='/pantry') My Foods
-        li(class=title=='My Shopping List'?'active':undefined)
-          a(href='/shopping_list') My Shopping List
+      if user
+        ul.nav.navbar-nav
+          li(class=title == 'My Foods' ? 'active':undefined)
+            a(href='/pantry') My Foods
+          li(class=title=='My Shopping List'?'active':undefined)
+            a(href='/shopping_list') My Shopping List
+          li(class=title == 'My Recipes' ? 'active' : undefined)
+            a(href='/recipes') My Recipes
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=title=='Login'?'active':undefined)

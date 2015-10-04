@@ -1,12 +1,12 @@
 extends layout
 
 block content
-    .container.mini_overlay
+    .container.mini_overlay#lay-for-list
         h1 Shopping List
     .nav.info-bar
         ul.nav.navbar-nav.navbar-default.indiv-bar
             li.dropdown(class=title == 'Add-Item' ? 'active' : undefined)
-                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                a.dropdown-toggle.indiv-drop(href='#', data-toggle='dropdown')
                     h3 Add Item
                         i.caret
                 ul.dropdown-menu

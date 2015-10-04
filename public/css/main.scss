@@ -16,7 +16,6 @@ html {
 
 .mini_overlay {
   width: 100%;
-  text-align: center;
   height: 20em;
   display: inline-block;
   background-size: 100%;
@@ -24,7 +23,6 @@ html {
 
 .mini-overlay h1 {
   font-size: 9em;
-  text-align: center;
   transform-style: preserve-3d;
   -webkit-transition: opacity 3s ease-in;
   -moz-transition: opacity 3s ease-in;
@@ -81,8 +79,32 @@ footer {
 .fa {
   margin-right: 6px;
 }
+.info-bar{
+  width: 30rem;
+  margin-top: 4rem;
+}
+
+.indiv-drop{
+  width: 23rem;
+  text-align: center;
+  i{
+    position: relative;
+    margin-left:10rem;
+
+  }
+}
+
+.dropdown-menu{
+  width: 40rem;
+}
+.indiv-bar{
+  width: 23rem;
+  margin-right: 2rem;
+}
+
 
 
 @import "components/home";
 @import "components/pantry";
-@import "components/shoppingList";
+
+@import "components/recipes";
