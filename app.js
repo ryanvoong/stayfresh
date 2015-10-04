@@ -116,9 +116,9 @@ app.post('/account/password', passportConf.isAuthenticated, userController.postU
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
 app.get('/pantry', passportConf.isAuthenticated, pantryController.getPantry);
-app.post('/pantry', passportConf.isAuthenticated, pantryController.postAddItem);
+app.post('/add_item', passportConf.isAuthenticated, pantryController.postAddItem);
 app.get('/shopping_list', passportConf.isAuthenticated, shoppingListController.getShoppingList);
-app.post('/shopping_list', passportConf.isAuthenticated, shoppingListController.postAddItem);
+app.post('/list_add_item', passportConf.isAuthenticated, shoppingListController.postAddItem);
 app.get('/recipes', passportConf.isAuthenticated, recipeController.getRecipes);
 app.post('/recipes-query', passportConf.isAuthenticated, recipeController.postRecipesQuery);
 

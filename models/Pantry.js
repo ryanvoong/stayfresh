@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var pantrySchema = new mongoose.Schema({
     items: [{
         name: { type: String, default: '' },
+        url: { type: String, default: '' },
         expiration: Date
     }]
 });

@@ -10,7 +10,7 @@ block content
                      i.caret
                 ul.dropdown-menu
                   .add-item
-                    form(name="add-item", method="post")
+                    form(action="/add_item", method="post")
                         input(type="hidden", name="_csrf", value=_csrf)
                         .form-group
                             label Name
@@ -39,7 +39,7 @@ block content
         each item in expired
             .col-md-3.items
                 p Expiration: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
-                img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
+                img.img-responsive(src="#{item.url}")
                 h2 #{item.name}
                 p Expired
                 a.fa.fa-trash.fa-2x
@@ -47,7 +47,7 @@ block content
         each item in almost_expired
             .col-md-3.items
                 p Expiration: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
-                img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
+                img.img-responsive(src="#{item.url}")
                 h2 #{item.name}
                 p Almost expired
                 a.fa.fa-trash.fa-2x
@@ -55,7 +55,7 @@ block content
         each item in fresh
             .col-md-3.items
                 p Expiration: #{item.expiration.getMonth()+1}/#{item.expiration.getDate()}/#{item.expiration.getFullYear()}
-                img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
+                img.img-responsive(src="#{item.url}")
                 h2 #{item.name}
                 p Fresh
                 a.fa.fa-trash.fa-2x

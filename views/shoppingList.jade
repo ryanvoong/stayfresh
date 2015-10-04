@@ -5,15 +5,15 @@ block content
         h1 Shopping List
 
     p Add item
-    form(name="add-item", method="post")
-        input(type="hidden", name="csrf", value=_csrf)
+    form(action="/list_add_item", method="post")
+        input(type="hidden", name="_csrf", value=_csrf)
         .form-group
             input.form-control(type="text", placeholder="Name of Food", name="name")
         button.btn.btn-defaut(type="submit") Submit
 
-    //.col-md-offset-1
-    //    each item in shoppingList.items
-    //        .col-md-3.items
-    //            a.fa.fa-trash
-    //            img.img-responsive(src='http://www.glutenfreeawesome.com/wp-content/uploads/2012/06/carrots-300x187.jpg')
-    //            h2 #{item.name}
+    .col-md-offset-1
+        each item in shoppingList.items
+            .col-md-3.items
+                a.fa.fa-trash
+                img.img-responsive(src="#{item.url}")
+                h2 #{item.name}
