@@ -5,16 +5,19 @@ block content
         h1 My Recipes
     .container
         .col-md-offset-3
-            .col-md-8.info-bar#bar
+            .col-md-8.info-bar.bar
                 form(action="/recipes-query", method="post")
                     input(type="hidden", name="_csrf", value=_csrf)
                     .form-group#recipe-specific
                         input.form-control(type="text", placeholder="Search for a recipe",name="query")
-                        br
                     button.btn.btn-defaut#submit(type="submit") Submit
                 form(action="/recipes-ingredients", method="post")
                     input(type="hidden", name="_csrf", value=_csrf)
-                    button.btn.btn-defaut#find(type="submit") Find a recipe with the ingredients in your pantry
+                    button.btn.btn-defaut#find(type="submit") Search with pantry
+
+    br
+    br
+    hr
 
     .container
         if recipes

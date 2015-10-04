@@ -62,13 +62,13 @@ h2 {
   text-underline-color: #fff;
 }
 
-p {
+#start p {
   font-size: 1.5em;
-  -webkit-transition: opacity 5s ease-in;
-  -moz-transition: opacity 5s ease-in;
-  -o-transition: opacity 5s ease-in;
-  transition: opacity 5s ease-in;
-  animation: fadein 5s;
+  -webkit-transition: opacity 10s ease-in;
+  -moz-transition: opacity 10s ease-in;
+  -o-transition: opacity 10s ease-in;
+  transition: opacity 10s ease-in;
+  animation: fadein 10s;
 }
 
 #description p {
