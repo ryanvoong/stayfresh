@@ -1,0 +1,21 @@
+h1 {
+    text-align: left;
+}
+
+.mini_overlay {
+    background: no-repeat center url(/images/shopping.jpg);
+}
+
+h3 {
+    width: 10em;
+}
+
+a:focus,
+a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.form-group {
+    width: 18em;
+}
