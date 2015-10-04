@@ -1,20 +1,15 @@
 #recipe{
-  text-align: center;
-  position: relative;
-  margin: 7rem 2rem;
-  margin-top: 12rem;
-  width:50rem;
+  background: no-repeat center url(/images/recipes.jpg);
 }
 
-#lay-for-recipe{
-
-}
-.search-overlays{
+#search {
   width: 100%;
   height: auto;
-  background: no-repeat center;
+  //background: no-repeat center;
   display: inline-block;
+  text-align: center;
 }
+
 .results{
 
 }

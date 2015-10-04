@@ -22,10 +22,9 @@ block content
     .container
         if recipes
             each recipe in recipes
-                if recipe.thumbnail
-                    .indiv-recipe
-                        .recipe-text
-                         p #{recipe.title}
-
-                        img.img-responsive.recipe-img(src="#{recipe.thumbnail}")
+                if recipe.thumbnail && recipe.title && recipe.href && recipe.ingredients
+                    p
+                        a(href="#{recipe.href}") #{recipe.title}
+                    p #{recipe.ingredients}
+                    img.img-responsive.recipe-img(src="#{recipe.thumbnail}")
                     hr

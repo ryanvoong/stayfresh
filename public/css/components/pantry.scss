@@ -2,6 +2,7 @@
   padding: 2rem;
 }
 
+
 .container#item{
   margin-top: 6rem;
 }
@@ -15,6 +16,9 @@ table {
   width: 100%;
 }
 
+#Pantry {
+  background: no-repeat center url(/images/pantry.jpg);
+}
 
 th,
 td {
@@ -57,6 +61,7 @@ a{
   float:right;
   color: rgb(51, 51, 51);
 }
+
 a:hover{
   color: rgb(51, 51, 51);
   text-decoration: underline;
@@ -67,7 +72,13 @@ a:hover{
   padding: 1rem 0;
 }
 
+.info-bar{
+  margin-top: 4rem;
+}
 
+.indiv-bar{
+  margin-right: 2rem;
+}
 
 .exp{
   color: white;
