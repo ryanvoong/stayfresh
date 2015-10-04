@@ -12,6 +12,8 @@ block content
                         input.form-control(type="text", placeholder="Search for a recipe",name="query")
                         br
                     button.btn.btn-defaut#submit(type="submit") Submit
+                form(action="/recipes-ingredients", method="post")
+                    input(type="hidden", name="_csrf", value=_csrf)
                     button.btn.btn-defaut#find(type="submit") Find a recipe with the ingredients in your pantry
 
     .container
@@ -19,7 +21,7 @@ block content
             each recipe in recipes
                 if recipe.thumbnail && recipe.title && recipe.href && recipe.ingredients
                     p
-                        a(href="#{recipe.href}") #{recipe.title}
+                        a(href="#{recipe.href}", target="_blank") #{recipe.title}
                     p #{recipe.ingredients}
                     img.img-responsive.recipe-img(src="#{recipe.thumbnail}")
                     hr
