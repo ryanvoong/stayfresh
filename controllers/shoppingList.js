@@ -46,8 +46,9 @@ exports.postAddItem = function(req, res) {
                         var item = {};
                         item.name = req.body.name;
                         item.expiration = undefined;
-                        if (JSON.parse(body)["count"] > 0 && JSON.parse(body)["sources"][0]["count"] > 0) {
-                            item.url = JSON.parse(body)["sources"][0]["result"][0]["thumb_url"];
+                        var data = JSON.parse(body);
+                        if (data["count"] > 0 && data["sources"][0]["count"] > 0) {
+                            item.url = data["sources"][0]["result"][0]["thumb_url"];
                             console.log(item.url);
                         }
                         shoppingList.items.push(item);
@@ -66,10 +67,13 @@ exports.postAddItem = function(req, res) {
 exports.postRemoveFromList = function(req, res) {
     ShoppingList.findById({ _id: req.user.shoppingList}, function(err, shoppingList) {
         if (shoppingList) {
-            shoppingList.items.forEach(function(item, index) {
+            shoppingList.items.some(function(item, index) {
                if (item.name == req.body.name) {
-                   shoppingList.items.splice(index);
+                   shoppingList.items.splice(index, 1);
                    shoppingList.save();
+                   return true;
+               } else {
+                   return false;
                }
             });
         }

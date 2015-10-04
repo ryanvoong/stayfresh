@@ -14,7 +14,8 @@ block content
                         form(action="/list_add_item", method="post")
                             input(type="hidden", name="_csrf", value=_csrf)
                             .form-group
-                                input.form-control(type="text", placeholder="Name")
+                                label Name
+                                input.form-control(type="text", name="name")
                             button.btn.btn-defaut(type="submit") Submit
     .col-md-offset-1
         each item in shoppingList.items
