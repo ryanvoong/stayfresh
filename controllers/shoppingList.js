@@ -62,3 +62,17 @@ exports.postAddItem = function(req, res) {
         }
     ]);
 };
+
+exports.postRemoveFromList = function(req, res) {
+    ShoppingList.findById({ _id: req.user.shoppingList}, function(err, shoppingList) {
+        if (shoppingList) {
+            shoppingList.items.forEach(function(item, index) {
+               if (item.name == req.body.name) {
+                   shoppingList.items.splice(index);
+                   shoppingList.save();
+               }
+            });
+        }
+        res.redirect('/shopping_list');
+    });
+};
